@@ -28,4 +28,5 @@ Things you may want to cover:
 
 Use `bundle install` to download all dependencies and start coding.
 
-* Using rubocop to follow code format standars.
+* Using rubocop to follow code format standars. https://github.com/rubocop/rubocop-rails
+* Using rspec for testing. https://relishapp.com/rspec/rspec-rails/v/5-1/docs
