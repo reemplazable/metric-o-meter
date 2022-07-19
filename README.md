@@ -23,3 +23,9 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+## Development:
+
+Use `bundle install` to download all dependencies and start coding.
+
+* Using rubocop to follow code format standars.
