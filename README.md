@@ -1,13 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a small application demo to visualize some metrics. 
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version: 3.1.2
 
-* System dependencies
+* Bundler version: 2.3.18
+
+* System dependencies: sqlite3
 
 * Configuration
 
