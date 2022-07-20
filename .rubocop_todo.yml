@@ -12,3 +12,13 @@ Style/Documentation:
   Exclude:
     - 'app/helpers/application_helper.rb'
     - 'config/application.rb'
+    - 'db/migrate/20220720104855_create_measures.rb'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'lib/tasks/auto_annotate_models.rake'
+
+Rails/RakeEnvironment:
+  Exclude:
+    - 'lib/tasks/auto_annotate_models.rake'
+    

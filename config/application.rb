@@ -20,5 +20,8 @@ module MetricOMeter
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    # Test configurations
+    config.generators.test_framework = :rspec
   end
 end
