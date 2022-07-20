@@ -30,4 +30,5 @@ Use `bundle install` to download all dependencies and start coding.
 
 * Using rubocop to follow code format standars. https://github.com/rubocop/rubocop-rails
 * Using rspec for testing. https://relishapp.com/rspec/rspec-rails/v/5-1/docs
+* Using FactoryBot for testing with factories: https://github.com/thoughtbot/factory_bot_rails
 * Can use Guard `bundle exec guard` to gravitate towards red-green development flow.
