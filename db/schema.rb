@@ -10,11 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_20_104855) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_21_213243) do
   create_table "measures", force: :cascade do |t|
     t.datetime "timestamp", precision: nil, null: false
     t.string "name", null: false
     t.decimal "value", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "statistics", force: :cascade do |t|
+    t.decimal "value", null: false
+    t.string "name", null: false
+    t.datetime "timestamp", precision: nil, null: false
+    t.integer "type", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

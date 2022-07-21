@@ -14,7 +14,7 @@ Style/Documentation:
     - 'app/controllers/api/v0/measures_controller.rb'
     - 'app/helpers/application_helper.rb'
     - 'config/application.rb'
-    - 'db/migrate/20220720104855_create_measures.rb'
+    - 'db/migrate/*.rb'
 
 Metrics/BlockLength:
   Exclude:
