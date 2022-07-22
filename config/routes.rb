@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   namespace 'api' do
     namespace 'v0' do
       resources :measures, only: %i[index create show]
+      resources :statistics, only: %i[index]
     end
   end
 end
