@@ -6,8 +6,8 @@
 #
 #  id         :integer          not null, primary key
 #  name       :string           not null
+#  stat_type  :integer          not null
 #  timestamp  :datetime         not null
-#  type       :integer          not null
 #  value      :decimal(, )      not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
@@ -34,8 +34,8 @@ RSpec.describe Statistic, type: :model do
       end
     end
 
-    context 'with no type' do
-      let(:statistic) { build(:statistic, type: nil) }
+    context 'with no stat_type' do
+      let(:statistic) { build(:statistic, stat_type: nil) }
 
       it 'is invalid' do
         expect(valid_statistic).to eq false
