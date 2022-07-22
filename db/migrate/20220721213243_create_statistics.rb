@@ -6,7 +6,7 @@ class CreateStatistics < ActiveRecord::Migration[7.0]
       t.decimal :value, null: false
       t.string :name, null: false
       t.timestamp :timestamp, null: false
-      t.integer :type, null: false
+      t.integer :stat_type, null: false
 
       t.timestamps
     end

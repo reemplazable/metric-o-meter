@@ -8,15 +8,11 @@ module Api
       end
 
       def create
-        measure = Measure.new(measure_params)
-        if measure.valid?
-          measure.save
-          Rails.logger.debug { "Saved measure #{measure.id}" }
-          head(:ok)
-        else
-          Rails.logger.error("Object not expected! #{request.body.read}")
-          head(:unprocessable_entity)
-        end
+        context = create_measure
+        return head(:ok) if context.success?
+
+        Rails.logger.error("Object not expected! #{request.body.read}")
+        head(:unprocessable_entity)
       end
 
       def show
@@ -25,7 +21,11 @@ module Api
 
       private
 
-      def measure_params
+      def create_measure
+        NewMeasureUseCase.execute(measure_params: measure_parameters)
+      end
+
+      def measure_parameters
         params.permit(%i[name timestamp value])
       end
     end

@@ -23,7 +23,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_21_213243) do
     t.decimal "value", null: false
     t.string "name", null: false
     t.datetime "timestamp", precision: nil, null: false
-    t.integer "type", null: false
+    t.integer "stat_type", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

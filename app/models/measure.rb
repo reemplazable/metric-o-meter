@@ -13,4 +13,7 @@
 #
 class Measure < ApplicationRecord
   validates :name, :timestamp, :value, presence: true
+
+  scope :between, ->(start_date, end_date) { where(timestamp: start_date..end_date) }
+  scope :by_name, ->(name) { where(name:) }
 end
