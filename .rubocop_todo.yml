@@ -13,6 +13,7 @@ Style/Documentation:
     - 'app/controllers/api/api_controller.rb'
     - 'app/controllers/api/v0/measures_controller.rb'
     - 'app/controllers/api/v0/statistics_controller.rb'
+    - 'app/controllers/statistics_controller.rb'
     - 'app/helpers/application_helper.rb'
     - 'app/interactos/create_measure_task.rb'
     - 'app/interactos/create_statistics_task.rb'

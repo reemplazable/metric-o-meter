@@ -22,11 +22,12 @@ module Api
       private
 
       def create_measure
-        NewMeasureUseCase.execute(measure_params: measure_parameters)
+        NewMeasureUseCase.execute(measure_params: measure_parameters[:measure])
       end
 
       def measure_parameters
-        params.permit(%i[name timestamp value])
+        # params.permit(%i[name timestamp value]).permit({ measure: %i[name timestamp value] })
+        params.permit({ measure: %i[name timestamp value] })
       end
     end
   end
