@@ -14,8 +14,10 @@ RSpec.describe Api::V0::MeasuresController, type: :request do
   describe '#create' do
     subject(:post_new_measure) { post '/api/v0/measures', params: payload, headers: }
 
+    let(:payload) { { measure: { **measure_parameters } } }
+
     context 'with the correct params' do
-      let(:payload) { attributes_for(:measure) }
+      let(:measure_parameters) { attributes_for(:measure) }
       it 'creates a new measure' do
         expect { post_new_measure }.to change { Measure.count }.by(1)
         expect(response).to have_http_status :ok
@@ -23,7 +25,7 @@ RSpec.describe Api::V0::MeasuresController, type: :request do
     end
 
     context 'without name' do
-      let(:payload) { attributes_for(:measure).except(:name) }
+      let(:measure_parameters) { attributes_for(:measure).except(:name) }
       it 'fails creating a new measure' do
         expect { post_new_measure }.not_to(change { Measure.count })
         expect(response).to have_http_status :unprocessable_entity
@@ -31,7 +33,7 @@ RSpec.describe Api::V0::MeasuresController, type: :request do
     end
 
     context 'without timestamp' do
-      let(:payload) { attributes_for(:measure).except(:timestamp) }
+      let(:measure_parameters) { attributes_for(:measure).except(:timestamp) }
       it 'fails creating a new measure' do
         expect { post_new_measure }.not_to(change { Measure.count })
         expect(response).to have_http_status :unprocessable_entity
@@ -39,7 +41,7 @@ RSpec.describe Api::V0::MeasuresController, type: :request do
     end
 
     context 'without value' do
-      let(:payload) { attributes_for(:measure).except(:value) }
+      let(:measure_parameters) { attributes_for(:measure).except(:value) }
       it 'fails creating a new measure' do
         expect { post_new_measure }.not_to(change { Measure.count })
         expect(response).to have_http_status :unprocessable_entity
