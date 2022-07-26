@@ -54,4 +54,11 @@ RSpec.describe Api::V0::MeasuresController, type: :request do
     get "/api/v0/measures/#{measure.id}", headers: headers
     expect(response.body).to eq measure.to_json
   end
+
+  it 'shows types of measures' do
+    create(:measure, name: 'foo')
+    create(:measure, name: 'bar')
+    get '/api/v0/measures/types', headers: headers
+    expect(response.body).to eq %w[bar foo].to_json
+  end
 end

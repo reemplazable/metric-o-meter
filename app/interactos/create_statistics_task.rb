@@ -50,7 +50,7 @@ class CreateStatisticsTask
   end
 
   def avg_between(name, start_date, end_date)
-    Measure.by_name(name).between(start_date, end_date).average(:value)
+    Measure.named(name).between(start_date, end_date).avg_value
   end
 
   def measure

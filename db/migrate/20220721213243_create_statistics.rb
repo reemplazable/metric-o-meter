@@ -8,6 +8,9 @@ class CreateStatistics < ActiveRecord::Migration[7.0]
       t.timestamp :timestamp, null: false
       t.integer :stat_type, null: false
 
+      t.index %i[name timestamp stat_type], unique: true
+      t.index :value
+
       t.timestamps
     end
   end

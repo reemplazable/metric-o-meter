@@ -19,6 +19,10 @@ module Api
         render_json Measure.find(params['id'])
       end
 
+      def types
+        render_json Measure.order(:name).distinct.pluck(:name)
+      end
+
       private
 
       def create_measure
@@ -26,7 +30,6 @@ module Api
       end
 
       def measure_parameters
-        # params.permit(%i[name timestamp value]).permit({ measure: %i[name timestamp value] })
         params.permit({ measure: %i[name timestamp value] })
       end
     end
