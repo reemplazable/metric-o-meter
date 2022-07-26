@@ -29,3 +29,6 @@ Rails/RakeEnvironment:
   Exclude:
     - 'lib/tasks/auto_annotate_models.rake'
     
+Rails/SkipsModelValidations:
+  Exclude:
+    - 'db/seeds.rb'

@@ -7,6 +7,9 @@ class CreateMeasures < ActiveRecord::Migration[7.0]
       t.string :name, null: false
       t.decimal :value, null: false
 
+      t.index %i[name timestamp]
+      t.index :value
+
       t.timestamps
     end
   end

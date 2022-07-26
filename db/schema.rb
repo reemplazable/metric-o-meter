@@ -17,6 +17,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_21_213243) do
     t.decimal "value", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["name", "timestamp"], name: "index_measures_on_name_and_timestamp"
+    t.index ["value"], name: "index_measures_on_value"
   end
 
   create_table "statistics", force: :cascade do |t|
@@ -26,6 +28,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_21_213243) do
     t.integer "stat_type", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["name", "timestamp", "stat_type"], name: "index_statistics_on_name_and_timestamp_and_stat_type", unique: true
+    t.index ["value"], name: "index_statistics_on_value"
   end
 
 end

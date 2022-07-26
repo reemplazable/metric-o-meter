@@ -12,11 +12,16 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
+# Indexes
+#
+#  index_statistics_on_name_and_timestamp_and_stat_type  (name,timestamp,stat_type) UNIQUE
+#  index_statistics_on_value                             (value)
+#
 FactoryBot.define do
   factory :statistic do
     value { '9.99' }
     name { 'MyString' }
-    timestamp { '2022-07-21 23:32:43' }
+    timestamp { DateTime.now }
     stat_type { 1 }
   end
 end

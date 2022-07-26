@@ -11,9 +11,15 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
+# Indexes
+#
+#  index_measures_on_name_and_timestamp  (name,timestamp)
+#  index_measures_on_value               (value)
+#
 class Measure < ApplicationRecord
   validates :name, :timestamp, :value, presence: true
 
   scope :between, ->(start_date, end_date) { where(timestamp: start_date..end_date) }
-  scope :by_name, ->(name) { where(name:) }
+  scope :named, ->(name) { where(name:) }
+  scope :avg_value, -> { average(:value) }
 end
